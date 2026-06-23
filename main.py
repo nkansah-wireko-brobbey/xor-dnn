@@ -10,12 +10,14 @@ def sigmoid_derivative(x):
 
 class NeuralNetwork:
     def __init__(self):
-        self.W1 = np.random.randn(2, 3)*0.1
+        self.W1 = np.random.randn(2, 4)*0.1
         self.W2 = np.random.randn(4,1)*0.1
 
-        
+        self.b1 = np.zeros((1, 4))
+        self.b2 = np.zeros((1, 1))
 
-
+    def forward(self, X):
+        self.z1 = X @ self.W1 + self.b1
 
 def print_hi(name):
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
